@@ -1,0 +1,205 @@
+  
+                <figure>
+                  <%= link_to image_tag(b.avatar.url(:thumb)), b, class: "img-responsive" %>
+                </figure>
+
+
+
+    
+  <!--<meta name="description" content="<%= meta_description %>">
+  <meta name="author" content="<%= meta_author %>">
+  <meta name="Keywords" content="<%= meta_keywords %>">-->
+
+
+
+
+     <div class="site-wrapper">
+
+      <div class="inside-wrapper">
+
+  		<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  			<div class="container">
+  				<div class="navbar-header">
+  					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  						<span class="sr-only">Abrir navegación</span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+  					<a href="/" class="navbar-brand"><img src="/assets/bslogo1white.svg"></a>
+            <img id="spinner" src="/assets/spinner.gif" style="visibility:hidden;">
+            <!-- <%= link_to site_name, root_path, :class => "navbar-brand" %> -->
+				</div>
+        
+  				<div class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav pull-left">
+              <li role="search">
+                <%= form_tag search_path, class: "navbar-form navbar-left", method: "get" do |f| %>
+                <div class="form-group">
+                  <%= text_field_tag :q, nil , class: 'form-control', placeholder: 'Buscar bandas o músicos...'  %>
+                </div>
+
+                <%= button_tag(type: 'submit', class: "btn btn-primary", name: nil) do %>
+                <span class="glyphicon glyphicon-search"></span>
+                <% end %>
+
+                <% end %>
+              </li>
+            </ul>
+
+          
+            <ul class="nav navbar-nav navbar-right pull-right">
+                <li>
+                      <a class="dropdown-toggle" type="button" id="menuNavDrop" data-toggle="dropdown">
+                        Explorar
+                      </a>
+                      <ul class="dropdown-menu fade in" role="menu" aria-labelledby="menuNavDrop">
+                          <li role="presentation">
+                            <%= link_to '<span class="glyphicon glyphicon-search"></span>'.html_safe+" "+'Búsqueda', search_path %>
+                          </li>
+                          <li role="presentation" class="divider"></li>
+                          <li role="presentation">
+                            <%= link_to '<span class="glyphicon glyphicon-user"></span>'.html_safe+" "+'Músicos', profiles_path %>
+                          </li>
+                          <li role="presentation">
+                            <%= link_to '<span class="glyphicon glyphicon-music"></span>'.html_safe+" "+'Bandas', bands_path %>
+                          </li>
+                          <li role="presentation">
+                            <%= link_to '<span class="glyphicon glyphicon-list-alt"></span>'.html_safe+" "+'Avisos Clasificados', anuncios_path %>
+                          </li>
+                      </ul>
+                  </li>
+                         	
+								<% if user_signed_in? %>
+                    
+                      <% if current_user.profile != nil %>
+                      <li>
+                        <% if notif == "0" %>
+                          <%= link_to '<span class="glyphicon glyphicon-bell"></span> 0'.html_safe, notifications_path %>
+                        <% else %>
+                          <%= link_to '<span class="glyphicon glyphicon-bell"></span> <span class="badge pull-right">'.html_safe+notif+'</span>'.html_safe, notifications_path %>
+                        <% end %>
+                      </li>
+                      <li>
+                        <% if current_user.profile.avatar.file? != false %>
+                          <%= link_to image_tag(current_user.profile.avatar.url(:thumbie))+" "+current_user.username, current_user.profile, class: "border-image" %>
+                        <% else %>
+                        <%= link_to '<span class="glyphicon glyphicon-user"></span>'.html_safe+" "+current_user.username, current_user.profile %>
+                        <% end %>
+                      </li>
+                      <% else %>
+                      <li>
+                        <%= link_to '<span class="glyphicon glyphicon-user"></span>'.html_safe+" "+current_user.username , new_profile_path, :data => { :no_turbolink => true } %>
+                      </li>
+                      <% end %>
+                    
+                    <li>
+                      <a class="dropdown-toggle" type="button" id="userNavDrop" data-toggle="dropdown">
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="userNavDrop">
+
+
+                        <% if current_user.profile != nil and current_user.profile.bands != nil and current_user.profile.bands.size > 0 %>
+                          <% current_user.profile.bands.each do |b| %>
+                            <li role="presentation">
+                              <% if b.name.length > 10 %>
+                                <%= link_to '<span class="glyphicon glyphicon-music"></span>'.html_safe+" "+b.name.first(10)+"...", b, html: {role:"menuitem", tabindex:"-1"} %>
+                              <% else %>
+                                <%= link_to '<span class="glyphicon glyphicon-music"></span>'.html_safe+" "+b.name, b, html: {role:"menuitem", tabindex:"-1"} %>
+                              <% end %>
+                            </li>
+                          <% end %>
+                        <% end %>
+                        <% if current_user.profile == nil %>
+                          <li role="presentation">
+                            <%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe+" "+'Crear Perfil', new_profile_path, :data => { :no_turbolink => true } %>
+                          </li>
+                        <% else %>
+                          <li role="presentation">
+                            <%= link_to '<span class="glyphicon glyphicon-calendar"></span>'.html_safe+" "+'Mi Calendario', calendar_path %>
+                          </li>
+                        <% end %>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation">
+                          <%= link_to '<span class="glyphicon glyphicon-cog"></span>'.html_safe+" "+'Mi Cuenta', edit_user_registration_path, html: {role:"menuitem", tabindex:"-1"} %>
+                        </li>
+                        <li role="presentation">
+                          <%= link_to '<span class="glyphicon glyphicon-off"></span>'.html_safe+" "+'Cerrar sesión', destroy_user_session_path, :method=>'delete' %>
+                        </li>
+                      </ul>
+                  </li>
+                <% elsif admin_signed_in? %>
+                  <li><%= link_to 'Cerrar sesión', destroy_admin_session_path, :method=>'delete' %></li>
+             		<% else %>
+                      <li>
+                      <a class="dropdown-toggle" type="button" id="loginNavDrop" data-toggle="dropdown">
+                        Ingresar
+                      </a>
+                      <div class="dropdown-menu login fade in" role="menu" aria-labelledby="loginNavDrop" style="padding: 15px; padding-bottom: 0px;">
+
+                          <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                          <div class="form-group">
+                            <%= f.label :email %>
+                            <%= f.text_field :email, autofocus: true, class: "form-control" %>
+                          </div>
+                          <div class="form-group">
+                            <%= f.label :password %>
+                            <%= f.password_field :password, autofocus: true, class: "form-control" %>
+                          </div>
+                          <div role="presentation" class="divider"></div>
+                          <div class="form-group">
+                            <%= f.check_box :remember_me %> <%= f.label "Recordar mi sesión", class: "string optional" %> 
+                          </div>
+                          <div class="form-group">
+                            <%= f.submit 'Entrar', autofocus: true, class: "form-control" %>
+                          </div>
+                          <% end %>
+                      </div>
+                  </li>
+              				<li><%= link_to 'Registrarse', new_user_registration_path %></li>
+
+              	<% end %>
+  					</ul>
+  				</div><!-- /.nav-collapse -->
+  			</div><!-- /.container -->
+  		</div><!-- /.navbar -->
+
+      
+
+  		
+  			<!-- <p class="notice"><%= notice %></p>
+  			<p class="alert"><%= alert %></p> -->
+      <noscript>
+        <div class="alert alert-danger" style="position: fixed; z-index: 999; width: 100%; text-align: center;">
+          Este sitio no funciona bien sin Javascript. Por favor, habilítalo.
+        </div>
+      </noscript>
+
+        <%= render 'layouts/messages' %>
+      
+        
+  		<%= yield %>
+  		<div class="container">
+  			<footer class="col-md-12">
+  				<hr>
+  				<p class="pull-right">
+  					<%= link_to '<span class="glyphicon-class glyphicon glyphicon-chevron-up"></span> Volver arriba'.html_safe, '#Top' %>
+  				</p>
+  				<p>
+  					&copy; 2014 FullHouse 
+            &bull;
+            <%= link_to "Atribuciones", legal_path %></li>
+  					&bull;
+  					Privacidad</li>
+  					&bull;
+  					Términos y Condiciones</li>
+  				</p>
+  			</footer>
+  		</div> <!-- /container -->
+      </div>
+      </div> <!-- Site wrapper -->
+	<%= yield :scripts %>
+  	</body>
+  	</html>

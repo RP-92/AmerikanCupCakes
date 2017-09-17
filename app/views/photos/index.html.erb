@@ -1,0 +1,39 @@
+<div class="container roundgrey", style = 'background-color: #FFB2FF'>
+  <div class="row">
+    <div class="col-md-12">
+      <% if @photos == nil %>
+      <% elsif @photos.empty? %>
+        <p class="centertext", style="color: #FFCCFF">No hay fotos aún :(</p>
+      <% else %>
+        <div id="results">
+          <% @photos.each do |p| %>
+            <row>
+              <div class="col-md-12 centertext" style="height: 450px;">
+                <figure>
+                  <%= image_tag(p.picture.url(:gallery)) %>
+                </figure>
+              </div>
+            </row>
+          <% end %>
+        </div>
+
+          
+      <% end %>
+    </div>
+            
+  </div>
+
+  <br>
+  <% if admin_signed_in? %>
+          <div class="row">
+              <div class="col-lg-4">
+                <button class="btn btn-danger btn-lg noSpin" onclick="history.back();">Atrás</button>
+              </div>
+              <div class="col-lg-6">
+                <%= link_to "Subir una foto", new_photo_path, class: "btn btn-danger btn-lg noSpin" %>
+              </div>
+            </div>
+  <% end %>
+      </div>
+
+</div>

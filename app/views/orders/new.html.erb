@@ -1,0 +1,9 @@
+<div class="col-md-8 col-md-offset-2 centertext">
+  <h1 style="color: #990033"> Pedido virtual </h1>
+  </div>
+ 
+<% if admin_signed_in? %>
+  <%= render 'forma' %>
+<% else %>
+  <%= render 'formu' %>
+<% end %>

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="centertext", style="color: #990033">Tipos de bases</h2>
+  </div>
+</div>
+
+<div class="container roundgrey", style = 'background-color: #FFB2FF'>
+  <div class="row">
+    <div class="col-md-12">
+      <% if @cakebases == nil %>
+      <% elsif @cakebases.empty? %>
+        <p class="centertext", style="color: #990033">No hay tipos de bases aún :(</p>
+      <% else %>
+        <div id="results">
+          <% @cakebases.each do |b| %>
+          <% if b.name == "Otra" %>
+          <% else %>
+              <div class="row">
+                <div class="col-md-6">
+                  <strong style="color: #990033"><%= b.name %></strong>
+                </div>
+
+                <div class="col-md-2">
+                  <strong ><%= link_to 'Editar', edit_cake_basis_path(b), {style: "color: #990033"} %></strong>
+                </div>
+
+                <div class="col-md-2">
+                  <strong ><%= link_to 'Eliminar', cake_basis_path(b),
+              method: :delete, data: {  style: "color: #990033", confirm: 'Eliminar tipo de base?'} %></strong>
+                </div>
+              </div>
+              <br>
+            <% end %>
+          <% end %>
+        </div>
+
+          
+      <% end %>
+    </div>
+            
+  </div>
+
+  <br>
+          <div class="row">
+              <div class="col-lg-4">
+                <button class="btn btn-danger btn-lg noSpin" onclick="history.back();">Atrás</button>
+                <%= link_to "Nuevo tipo de base", new_cake_basis_path, class: "btn btn-danger btn-lg" %>
+              </div>
+          </div>
+      </div>
+
+</div>

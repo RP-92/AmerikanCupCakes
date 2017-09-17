@@ -1,0 +1,30 @@
+<div class="container roundgrey">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="centertext", style="color: #FFCCFF">¿Olvidó su contraseña?</h2>
+    </div>
+  </div>
+  <br>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, style: 'background-color: #FFB2FF;', multipart: true, class:"form-horizontal col-md-6 col-md-offset-3 roundgrey panel" }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field" style="color: #CC0066">
+    <%= f.label :correo, class: "col-md-3 control-label" %><br />
+    <%= f.email_field :email, autofocus: true, class: "form-control"   %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+      <div class="col-lg-10 col-lg-offset-2">
+    <%= f.submit "Recuperar mi contraseña", class: "btn btn-danger btn-lg" %>
+      </div>
+  </div>
+<% end %>
+
+<div class="row">
+	<%= render "devise/shared/links" %>
+</div>
+
+</div>

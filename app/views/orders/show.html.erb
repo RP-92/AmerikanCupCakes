@@ -1,0 +1,79 @@
+<div class="centertext">
+  <h1 style="color: #FFCCFF"> Detalles del pedido </h1>
+  </div>
+
+<div class="container roundgrey col-md-10 col-md-offset-1", style = "background-color: #FFB2FF">
+<p style="color: #660033">
+  <strong>Nombre:</strong>
+  <%= @order.name %>
+</p>
+ 
+<p style="color: #660033">
+  <strong>Fecha:</strong>
+  <%= @order.date %>
+</p>
+
+<% if @order.attendants != nil %>
+  <p style="color: #660033">
+    <strong>Número de personas:</strong>
+    <%= @order.attendants %>
+  </p>
+<% end %>
+
+
+<p style="color: #660033">
+  <strong>Descripción</strong>
+  <%= @order.description %>
+</p>
+
+
+<p style="color: #660033">
+  <strong>Teléfono:</strong>
+  <%= @order.phone %>
+</p>
+
+<p style="color: #660033">
+  <strong>Correo:</strong>
+  <%= @order.email %>
+</p>
+
+<% if @order.cake_base_name != "Vacío" %>
+  <p style="color: #660033">
+    <strong>Base de la torta:</strong>
+    <%= @order.cake_base_name %>
+  </p>
+<% end %>
+
+<% if @order.cake_filling_name != "Vacío" %>
+  <p style="color: #660033">
+    <strong>Relleno de la torta:</strong>
+    <%= @order.cake_filling_name %>
+  </p>
+<% end %>
+
+<p style="color: #CC0000">
+  <strong>Estado de la orden:</strong>
+  <%= @order.status %>
+</p>
+
+
+<br>
+
+<% if @order.status == "Nueva" || @order.status == "Vista" %>
+  <div class="col-md-8 col-md-offset-2 centertext">
+    <%= link_to 'Tomar la orden', take_order_path(@order), method: :get, class: "btn btn-danger btn-lg"  %>
+  </div>
+  <div class="col-md-8 col-md-offset-2 centertext">
+    <%= link_to 'Marcar como  no vista', renew_order_path(@order), method: :get, class: "btn btn-danger btn-lg"  %>
+  </div>
+<% end %>
+<% if @order.status == "Tomada" %>
+  <div class="col-md-8 col-md-offset-2 centertext">
+    <%= link_to 'Entregar la orden', deliver_order_path(@order), method: :get, class: "btn btn-danger btn-lg"  %>
+  </div>
+<% end %>
+<% if @order.status != "Entregada" && @order.status != "Rechazada" %>
+  <div class="col-md-8 col-md-offset-2 centertext">
+    <%= link_to 'Rechazar la orden', reject_order_path(@order), method: :get, class: "btn btn-danger btn-lg"  %>
+  </div>
+<% end %>

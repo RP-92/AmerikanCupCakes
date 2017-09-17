@@ -1,0 +1,48 @@
+<%= form_for( @event_type, :html => { :style => 'background-color: #FFB2FF;', multipart: true, class:"form-horizontal col-md-6 col-md-offset-3 roundgrey panel"}) do |f| %>
+
+
+    <div class="form-group" style="color: #CC0066">
+      <%= f.label :nombre, class: "col-md-3 control-label"%>
+      <div class="col-md-9 col-lg-7">
+        <%= f.text_field :name, class: "form-control", placeholder: "Pasteles de cumpleaños..." %>
+      </div>
+    </div>
+   
+  <br>
+
+    <div class="form-group" style="color: #CC0066">
+      <%= f.label :descripción , class: "col-md-3 control-label" %>
+      <div class="col-md-9 col-lg-7">
+        <%= f.text_area :description, class: "form-control", placeholder: "Escriba aquí en detalle acerca de este tipo de eventos" %>
+      </div>
+    </div>
+   
+  <br>
+
+    <div class="form-group" style="color: #CC0066">
+      <%= f.label :reseña , class: "col-md-3 control-label" %>
+      <div class="col-md-9 col-lg-7">
+        <%= f.text_area :minidescription, class: "form-control", placeholder: "Escriba aquí lo que irá en el catálogo" %>
+      </div>
+    </div>
+
+      
+  <br>
+
+    <div class="form-group" style="color: #CC0066">
+      <%= f.label :imagen_de_muestra , class: "col-md-3 control-label" %>
+      <div class="col-md-9 col-lg-7">
+        <%= f.file_field :avatar, class: "inputfile" %>
+      </div>
+    </div>
+
+      
+  <br>
+
+    <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <%= f.submit "Guardar", class: "btn btn-danger btn-lg" %>
+        </div>
+    </div>
+
+  <% end %>

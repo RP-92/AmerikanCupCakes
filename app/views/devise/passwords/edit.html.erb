@@ -1,0 +1,33 @@
+<div class="container roundgrey">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="centertext", style="color: #FFCCFF">Cambiar contraseña</h2>
+    </div>
+  </div>
+  <br>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, style: 'background-color: #FFB2FF;', multipart: true, class:"form-horizontal col-md-6 col-md-offset-3 roundgrey panel" }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div class="field" style="color: #CC0066">
+    <%= f.label :password, "Nueva contraseña", class: "col-md-6 control-label" %><br />
+    <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control" %>
+  </div>
+
+  <div class="field" style="color: #CC0066">
+    <%= f.label :password_confirmation, "Confirmar nueva contraseña", class: "col-md-6 control-label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <div class="col-lg-8">
+      <%= f.submit "Cambiar mi contraseña", class: "btn btn-danger btn-lg" %>
+    </div>
+    <div class="col-lg-2">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+<% end %>

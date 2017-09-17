@@ -1,0 +1,39 @@
+#$ cat config/database.yml
+# PostgreSQL. Versions 8.2 and up are supported
+#
+# Install the pg driver:
+#   gem install pg
+# On OS X with Homebrew
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On OS X with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql184/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQLand put its /bin directory on your path
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  pool: 5
+  host: localhost
+  username: pg-rey
+  password: ahbj6tw2
+  timeout: 5000
+
+development:
+  <<: *default
+  database: AmerikanCupCakes_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: AmerikanCupCakes_test
+
+production:
+  <<: *default
+  database: AmerikanCupCakes_production

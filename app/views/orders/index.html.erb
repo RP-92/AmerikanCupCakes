@@ -1,0 +1,84 @@
+<div class="container roundgrey">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 style="color: #FFCCFF", class="centertext">Todas las órdenes</h2>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+            <%= paginate @orders %>
+            <div class"row">
+            <%= link_to 'Agregar pedido industrial', new_order_path, class: "btn btn-danger btn-lg"  %>
+            </div>
+
+            <% if @orders == nil %>
+
+              <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default btn-lg noSpin" onclick="history.back();">Atrás</button>
+              </div>
+
+            <% elsif @orders.empty? %>
+
+              <p class="centertext">No hay órdenes que coincidan con la búsqueda :(</p>
+
+              <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default btn-lg noSpin" onclick="history.back();">Atrás</button>
+              </div>
+
+          <% else %>
+
+          <div id="results">
+            <div class="row">
+              <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                <h4><strong style="color: #FFCCFF"> Pedido </strong></h4>
+              </div>
+
+              <div class="col-xs-6 col-lg-6 visible-lg visible-md">
+                <h4> <strong style="color: #FFCCFF"> Descripción del pedido </strong></h4>
+              </div>
+
+              <div class="col-xs-1 visible-lg">
+                <h4> <strong style="color: #FFCCFF"> Estado </strong></h4>
+              </div>
+
+              <div class="col-xs-1 visible-lg">
+                <h4><strong style="color: #FFCCFF"> Fecha </strong></h4>
+              </div>
+            </div>
+          <br>
+
+            <% @orders.each do |b| %>
+              <div class="row">
+                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                  <strong style="color: #FFCCFF"><%= b.name %></strong>
+                </div>
+
+                <div class="col-xs-6 visible-lg visible-md">
+                  <strong style="color: #FFCCFF"><%= b.description %></strong>
+                </div>
+
+                <div class="col-xs-1 visible-lg">
+                  <% if b.status=="Nueva"%>
+                    <strong style="color: #FF0000"><%= b.status %></strong>
+                  <% else %>
+                    <strong style="color: #FFCCFF"><%= b.status %></strong>
+                  <% end %>
+                </div>
+
+                <div class="col-xs-1 visible-lg">
+                  <strong style="color: #FFCCFF"><%= b.date %></strong>
+                </div>
+
+                <div class="col-xs-3 col-md-2 col-lg-2">
+                 <%= link_to 'Ver detalles', order_path(b), class: "btn btn-danger btn-lg"  %>
+                </div>
+              </div>
+              <br>
+            
+            <% end %>
+          </div>  
+        <% end %>
+       </div>
+    </div>
+</div>

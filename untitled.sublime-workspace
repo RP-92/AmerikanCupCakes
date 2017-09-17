@@ -1,0 +1,239 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"defa",
+				"default_url_options"
+			],
+			[
+				"action_",
+				"action_mailer"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/rey/rails/AmerikanCupCakes"
+	],
+	"file_history":
+	[
+		"/home/rey/rails/AmerikanCC/app/assets/stylesheets/application.scss",
+		"/home/rey/rails/AmerikanCupCakes/app/assets/stylesheets/bootstrap_custom.css.scss",
+		"/home/rey/rails/AmerikanCC/config/routes.rb",
+		"/home/rey/rails/AmerikanCC/app/views/home/index.html.erb",
+		"/home/rey/rails/AmerikanCC/Gemfile",
+		"/home/rey/rails/AmerikanCupCakes/Gemfile",
+		"/home/rey/rails/AmerikanCupCakes/app/views/layouts/application.html.erb",
+		"/home/rey/rails/AmerikanCupCakes/config/routes.rb",
+		"/home/rey/rails/AmerikanCupCakes/app/assets/stylesheets/application.css",
+		"/home/rey/rails/AmerikanCupCakes/app/helpers/layout_helper.rb",
+		"/home/rey/rails/AmerikanCupCakes/app/views/devise/registrations/new.html.erb",
+		"/home/rey/rails/AmerikanCC/config/environments/development.rb",
+		"/home/rey/rails/AmerikanCupCakes/config/environments/development.rb",
+		"/home/rey/rails/AmerikanCC/db/migrate/20150421005922_create_orders.rb",
+		"/home/rey/rails/Amerikan/AmerikanCupCakes/config/environments/production.rb",
+		"/home/rey/rails/AmerikanCC/db/migrate/20150708060614_devise_create_admins.rb",
+		"/home/rey/rails/Amerikan/AmerikanCupCakes/app/assets/stylesheets/application.css",
+		"/home/rey/rails/AmerikanCC/app/views/layouts/application.html.erb",
+		"/home/rey/julia/Proyecto/fileReader.jl",
+		"/home/rey/julia/Proyecto/main.jl",
+		"/home/rey/julia/Proyecto/functions.jl",
+		"/home/rey/julia/function",
+		"/home/rey/julia/Proyecto/R*tree.jl",
+		"/home/rey/rails/AmerikanCC/config/initializers/devise.rb",
+		"/home/rey/julia/Tarea 2/ejercicio 1.jl",
+		"/home/rey/julia/Tarea 1/ejercicio 1.jl",
+		"/home/rey/julia/Tarea 1/ejercicio 3.jl",
+		"/home/rey/julia/Tarea 1/ejercicio 2.jl",
+		"/home/rey/julia/raiz de polinomio.jl",
+		"/home/rey/julia/Tarea 2/asd",
+		"/home/rey/julia/Tarea 1/ejercicio 4.jl",
+		"/home/rey/julia/Proyecto/functions",
+		"/home/rey/rails/AmerikanCC/app/assets/stylesheets/bootstrap_custom.css.scss",
+		"/home/rey/rails/AmerikanCC/config/environments/production.rb",
+		"/home/rey/rails/AmerikanCC/app/views/devise/sessions/new.html.erb",
+		"/home/rey/rails/AmerikanCC/app/views/devise/passwords/edit.html.erb",
+		"/home/rey/rails/AmerikanCC/app/views/devise/registrations/new.html.erb",
+		"/home/rey/rails/AmerikanCC/.env",
+		"/home/rey/rails/AmerikanCC/app/helpers/layout_heper.rb",
+		"/home/rey/rails/AmerikanCC/config/locales/devise.en.yml",
+		"/home/rey/rails/AmerikanCC/app/views/devise/shared/_links.html.erb",
+		"/home/rey/rails/AmerikanCC/app/views/devise/mailer/reset_password_instructions.html.erb",
+		"/home/rey/rails/AmerikanCC/config/database.yml",
+		"/home/rey/rails/AmerikanCC/.gitignore",
+		"/home/rey/rails/AmerikanCC/Procfile",
+		"/home/rey/rails/AmerikanCC/app/views/devise/confirmations/new.html.erb",
+		"/home/rey/rails/AmerikanCC/app/views/devise/mailer/unlock_instructions.html.erb",
+		"/home/rey/rails/AmerikanCC/app/views/layouts/application_bs.html.erb",
+		"/home/rey/rails/AmerikanCC/app/views/devise/mailer/confirmation_instructions.html.erb",
+		"/home/rey/rails/AmerikanCC/README",
+		"/home/rey/rails/AmerikanCC/db/migrate/20160217034446_add_details_to_order.rb"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"acc",
+			"navbar",
+			"nav",
+			"acc_logo",
+			"asset-url",
+			"image-url",
+			"config.assets",
+			"dropdown",
+			"menunav",
+			"dropdown",
+			"padding-top",
+			"media"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 201.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

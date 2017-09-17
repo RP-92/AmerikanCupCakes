@@ -1,0 +1,9 @@
+<% if page.current? %>
+  <li class='active'>
+    <%= content_tag :a, page, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)), :style => "border-color: #CC6699; background-color: #CC6699"  %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to page, url, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)), :style => "color: #CC6699"  %>
+  </li>
+<% end %>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="centertext", style="color: #660033"><%= @event_type.name %></h2>
+  </div>
+</div>
+
+<div class="container roundgrey", style = 'background-color: #FFB2FF'>
+  <br>
+
+  <p class="centertext" style="color: #990033"><%= @event_type.description %></p>
+
+  <br>
+
+  <div class="container roundgrey col-md-7 col-sm-10 col-lg-6 col-lg-offset-3 col-xs-offset-1", style = 'background-color: #FFCCFF'>
+    <br>
+    <div class="centertext">
+      <%= image_tag @event_type.avatar.url(:medium) %>
+    </div>
+    <br>
+  </div>
+
+  <% if admin_signed_in? %>
+    <div class="row">
+
+              <div class="col-xs-10 col-xs-offset-2">
+                <%= link_to 'Editar'.html_safe, edit_event_type_path(@event_type), class: "btn btn-danger btn-lg" %>
+              </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-12">
+            
+        </div>
+      </div>
+</div>

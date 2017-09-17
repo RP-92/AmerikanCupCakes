@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="centertext", style="color: #990033">Tipos de pedidos</h2>
+  </div>
+</div>
+
+<div class="container roundgrey", style = 'background-color: #FFB2FF'>
+  <div class="row">
+    <div class="col-md-12">
+      <% if @event_types == nil %>
+      <% elsif @event_types.empty? %>
+        <p class="centertext", style="color: #CC0066">No hay tipos de eventos aún :(</p>
+      <% else %>
+        <div id="results">
+          <% @event_types.each do |b| %>
+            <div class="col-md-6 centertext" style="height: 300px;">
+              <figure>
+                <%= image_tag(b.avatar.url(:medium)) %>
+              </figure>
+              <div class="col-md-12 centertext">
+                <strong style="color: #CC0066"><%= link_to b.name, event_type_path(b), {style: "color: #CC0066"} %></strong>
+              </div>
+              <div class="col-md-12 centertext">
+                <p style="color: #CC0066"><%= b.minidescription %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+          
+      <% end %>
+    </div>
+            
+  </div>
+
+  <br>
+  <% if admin_signed_in? %>
+          <div class="row">
+              <div class="col-lg-6">
+                <%= link_to "Crear nuevo tipo de evento", new_event_type_path, class: "btn btn-danger btn-lg noSpin" %>
+              </div>
+          </div>
+  <% end %>
+      </div>
+
+</div>

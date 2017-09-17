@@ -1,0 +1,19 @@
+<%= form_for( @cakebase, :html => { :style => 'background-color: #FFB2FF;', multipart: true, class:"form-horizontal col-md-6 col-md-offset-3 roundgrey panel"}) do |f| %>
+
+
+    <div class="form-group" style="color: #CC0066">
+      <%= f.label :nombre, class: "col-md-3 control-label"%>
+      <div class="col-md-9 col-lg-7">
+        <%= f.text_field :name, class: "form-control", placeholder: "Biscocho, hoja, etc." %>
+      </div>
+    </div>
+   
+  <br>
+
+    <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <%= f.submit "Guardar", class: "btn btn-danger btn-lg" %>
+        </div>
+    </div>
+
+  <% end %>

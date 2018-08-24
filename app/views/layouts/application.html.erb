@@ -28,15 +28,13 @@
   					<span class="sr-only">Abrir navegación</span>
   					<span class="icon-bar"></span>
   					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
   				</button>
   				<a href="/" class="navbar-brand"><%= image_tag "Amerikan17.png" %></a>
   				</div>
 
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <div class="nav navbar-nav navbar-right pull-right">
-
-  				  <div class="nav navbar-nav navbar-right pull-right">
-            		<ul class="nav navbar-nav pull-left">
+          <div class="collapse navbar-collapse">
+            		<ul class="nav navbar-nav pull-right">
                 	  <% if admin_signed_in? %>
                   		<li><%= link_to 'Salir', destroy_admin_session_path, :method=>'delete' %></li>
 
@@ -76,7 +74,6 @@
                 	  <% end %>
               		  </li>
             		</ul>
-            	</div>
             </div>
           </div>
         </div>

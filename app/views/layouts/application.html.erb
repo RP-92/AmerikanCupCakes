@@ -34,42 +34,28 @@
   				</div>
 
           <div class="collapse navbar-collapse">
-                <li>
-                      <a class="dropdown-toggle" type="button" id="menuNavDrop" data-toggle="dropdown">
-                        Explorar
-                      </a>
-                      <ul class="dropdown-menu fade in" role="menu" aria-labelledby="menuNavDrop">
-                          <li role="presentation"> <%= link_to '', '#'%> </li>
-                      </ul>
-                  </li>
-
             		<ul class="nav navbar-nav pull-right">
-                	  <% if admin_signed_in? %>
-                  		<li><%= link_to 'Salir', destroy_admin_session_path, :method=>'delete' %></li>
+                	<% if admin_signed_in? %>
+                  	<li><%= link_to 'Salir', destroy_admin_session_path, :method=>'delete' %></li>
 
-                      <li><%= link_to 'Bases', cake_bases_path, {style: "color: #FFCCFF"} %></li>
+                    <li><%= link_to 'Bases', cake_bases_path, {style: "color: #FFCCFF"} %></li>
 
-                      <li><%= link_to 'Rellenos', cake_fillings_path, {style: "color: #FFCCFF"} %></li>
+                    <li><%= link_to 'Rellenos', cake_fillings_path, {style: "color: #FFCCFF"} %></li>
 
-                  		<li><%= link_to 'Órdenes', orders_path, {style: "color: #FFCCFF"} %></li>
+                  	<li><%= link_to 'Órdenes', orders_path, {style: "color: #FFCCFF"} %></li>
 
-                      <li><%= link_to 'Catálogo', event_types_path, {style: "color: #FFCCFF"} %></li>
+                    <li><%= link_to 'Catálogo', event_types_path, {style: "color: #FFCCFF"} %></li>
 
-                      <li><%= link_to 'Galería', photos_path, {style: "color: #FFCCFF"} %></li>
-                  		<li role="search">
+                    <li><%= link_to 'Galería', photos_path, {style: "color: #FFCCFF"} %></li>
 
 
-            			<%= form_tag(orders_path, :method => "get", id: "search-form", class: "navbar-form navbar-left") do %>
-              				<div class="form-group">
-                				<%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Buscar pedidos..." %>
-                  					<%= button_tag(type: 'submit', class: "btn btn-danger", name: nil) do %>
-                  					<span class="glyphicon glyphicon-search"></span>
-                  					<% end %>
-                  					</span>
-              				</div>
-            			<% end %>
+            			  <%= form_tag(orders_path, :method => "get", id: "search-form", class: "navbar-form navbar-left") do %>
+              			<div class="form-group">
+                			<%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Buscar pedidos..." %>
+                  			<%= button_tag(type: 'submit', class: "btn btn-danger", name: nil) do %>
+                  			<span class="glyphicon glyphicon-search"></span>
+              			</div>
             			
-
              			<% else %>
                     <li ><%= link_to '<span class="glyphicon-class glyphicon glyphicon-heart"></span> Quiénes somos'.html_safe, root_path, {style: "color: #FFCCFF"} %></li>
 
@@ -80,8 +66,7 @@
                     <li><%= link_to '<span class="glyphicon-class glyphicon glyphicon-picture"></span> Galería'.html_safe, photos_path, {style: "color: #FFCCFF"}%></li>
 
                     <li><%= link_to '<span class="glyphicon-class glyphicon glyphicon-envelope"></span> Contato'.html_safe, contact_index_path, {style: "color: #FFCCFF"}%></li>
-                	  <% end %>
-              		  </li>
+                	<% end %>
             		</ul>
             </div>
           </div>

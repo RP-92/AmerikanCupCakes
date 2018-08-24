@@ -34,28 +34,34 @@
   				</div>
 
           <div class="collapse navbar-collapse">
+
             		<ul class="nav navbar-nav pull-right">
-                	<% if admin_signed_in? %>
-                  	<li><%= link_to 'Salir', destroy_admin_session_path, :method=>'delete' %></li>
+                	  <% if admin_signed_in? %>
+                  		<li><%= link_to 'Salir', destroy_admin_session_path, :method=>'delete' %></li>
 
-                    <li><%= link_to 'Bases', cake_bases_path, {style: "color: #FFCCFF"} %></li>
+                      <li><%= link_to 'Bases', cake_bases_path, {style: "color: #FFCCFF"} %></li>
 
-                    <li><%= link_to 'Rellenos', cake_fillings_path, {style: "color: #FFCCFF"} %></li>
+                      <li><%= link_to 'Rellenos', cake_fillings_path, {style: "color: #FFCCFF"} %></li>
 
-                  	<li><%= link_to 'Órdenes', orders_path, {style: "color: #FFCCFF"} %></li>
+                  		<li><%= link_to 'Órdenes', orders_path, {style: "color: #FFCCFF"} %></li>
 
-                    <li><%= link_to 'Catálogo', event_types_path, {style: "color: #FFCCFF"} %></li>
+                      <li><%= link_to 'Catálogo', event_types_path, {style: "color: #FFCCFF"} %></li>
 
-                    <li><%= link_to 'Galería', photos_path, {style: "color: #FFCCFF"} %></li>
+                      <li><%= link_to 'Galería', photos_path, {style: "color: #FFCCFF"} %></li>
+                  		<li role="search">
 
 
-            			  <%= form_tag(orders_path, :method => "get", id: "search-form", class: "navbar-form navbar-left") do %>
-              			<div class="form-group">
-                			<%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Buscar pedidos..." %>
-                  			<%= button_tag(type: 'submit', class: "btn btn-danger", name: nil) do %>
-                  			<span class="glyphicon glyphicon-search"></span>
-              			</div>
+            			<%= form_tag(orders_path, :method => "get", id: "search-form", class: "navbar-form navbar-left") do %>
+              				<div class="form-group">
+                				<%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Buscar pedidos..." %>
+                  					<%= button_tag(type: 'submit', class: "btn btn-danger", name: nil) do %>
+                  					<span class="glyphicon glyphicon-search"></span>
+                  					<% end %>
+                  					</span>
+              				</div>
+            			<% end %>
             			
+
              			<% else %>
                     <li ><%= link_to '<span class="glyphicon-class glyphicon glyphicon-heart"></span> Quiénes somos'.html_safe, root_path, {style: "color: #FFCCFF"} %></li>
 
@@ -66,7 +72,8 @@
                     <li><%= link_to '<span class="glyphicon-class glyphicon glyphicon-picture"></span> Galería'.html_safe, photos_path, {style: "color: #FFCCFF"}%></li>
 
                     <li><%= link_to '<span class="glyphicon-class glyphicon glyphicon-envelope"></span> Contato'.html_safe, contact_index_path, {style: "color: #FFCCFF"}%></li>
-                	<% end %>
+                	  <% end %>
+              		  </li>
             		</ul>
             </div>
           </div>

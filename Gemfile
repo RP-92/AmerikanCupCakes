@@ -45,6 +45,7 @@ gem 'less-rails-bootstrap'
 gem 'devise'
 gem "paperclip", "~> 4.3"
 gem 'foreigner', '~> 1.7', '>= 1.7.4'
+gem 'sprockets', '~> 2.12.4'
 gem 'kaminari'
 
 # Heroku integration

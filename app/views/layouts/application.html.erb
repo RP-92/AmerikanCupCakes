@@ -24,6 +24,13 @@
       <div class="navbar-inner">
   			<div class="container">
   				<div class="navbar-header">
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              <li><%= link_to 'Bases', cake_bases_path, {style: "color: #FFCCFF"} %></li>
+            </div>
+          </div>
+          
   				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
   					<span class="sr-only">Abrir navegación</span>
   					<span class="icon-bar"></span>
@@ -33,12 +40,6 @@
   				<a href="/" class="navbar-brand"><%= image_tag "Amerikan17.png" %></a>
   				</div>
 
-          <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-            <div id="myDropdown" class="dropdown-content">
-              <li><%= link_to 'Bases', cake_bases_path, {style: "color: #FFCCFF"} %></li>
-            </div>
-          </div>
 
           <div class="collapse navbar-collapse">
 

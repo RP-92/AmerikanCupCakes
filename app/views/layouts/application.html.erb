@@ -34,9 +34,14 @@
   				</div>
 
           <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                      <li><%= link_to 'Salir', destroy_admin_session_path, :method=>'delete' %></li>
-                </ul>
+                <li>
+                      <a class="dropdown-toggle" type="button" id="menuNavDrop" data-toggle="dropdown">
+                        Explorar
+                      </a>
+                      <ul class="dropdown-menu fade in" role="menu" aria-labelledby="menuNavDrop">
+                          <li role="presentation"> <%= link_to '', '#'%> </li>
+                      </ul>
+                  </li>
 
             		<ul class="nav navbar-nav pull-right">
                 	  <% if admin_signed_in? %>

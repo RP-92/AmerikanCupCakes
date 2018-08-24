@@ -33,6 +33,21 @@
   				<a href="/" class="navbar-brand"><%= image_tag "Amerikan17.png" %></a>
   				</div>
 
+          <ul class="nav pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropwdown">
+                Account
+              </a>
+              <ul class="dropdown-menu">
+                      <li><%= link_to 'Salir', destroy_admin_session_path, :method=>'delete' %></li>
+
+                      <li><%= link_to 'Bases', cake_bases_path, {style: "color: #FFCCFF"} %></li>
+              </ul>
+            </li>
+          </ul>
+
+
+
           <div class="collapse navbar-collapse">
                 <li>
                       <a class="dropdown-toggle" type="button" id="menuNavDrop" data-toggle="dropdown">

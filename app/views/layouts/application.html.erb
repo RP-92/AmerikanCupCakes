@@ -33,6 +33,13 @@
   				<a href="/" class="navbar-brand"><%= image_tag "Amerikan17.png" %></a>
   				</div>
 
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              <li><%= link_to 'Bases', cake_bases_path, {style: "color: #FFCCFF"} %></li>
+            </div>
+          </div>
+
           <div class="collapse navbar-collapse">
 
             		<ul class="nav navbar-nav pull-right">
